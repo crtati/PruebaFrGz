@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
@@ -21,53 +22,55 @@
   </head>
   <body>
     <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fs-4 p-3 " id="menu">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <span class="text-primary fs-4 fw-bold"> </span>
+            <img src="aseets/logo1.png" alt="" height="100px" width="100px" class="img-logo">
+          </a>
+  
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mx-4">
+  
+              <li class="nav-item mx-3 mt-2">
+                <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item mx-3 mt-2">
+                <a class="nav-link " aria-current="page" href="maceta.html">Maceteros</a></li>
+              <li class="nav-item mx-3 mt-2">
+                <a class="nav-link " aria-current="page" href="tierraHoja.html">Tierra de Hojas</a></li>
+              <li class="nav-item mx-3 mt-2">
+                <a class="nav-link" aria-current="page" href="plantas.html">Plantas</a></li>
+              </li>
+              
+            
+              <li class="nav-item mx-3 mt-2">
+                
+                <a class="nav-link" href="#"> <i class="fa-solid fa-cart-shopping mx-1 "></i> Productos $0</a>
+  
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="cuenta.html">
+                  <button type="button" class="btn btn-success btn-lg mt-0" >ÚNETE 
+                  <i class="fa-solid fa-user mx-1"></i>
+                  </button>
+                  </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fs-4 p-3 " id="menu">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <span class="text-primary fs-4 fw-bold"> </span>
-          <img src="aseets/logo1.png" alt="" height="100px" width="100px">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-4">
-
-            <li class="nav-item mx-4">
-              <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="quienesSomos.html">Quienes Somos</a>
-            </li>
-            
-            <li class="nav-item dropdown mx-4 fs-4">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-shop mx-1"></i>
-                Tienda Online
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item fs-4" href="maceta.html">Maceteros</a></li>
-                <li><a class="dropdown-item fs-4 active" href="tierraHoja.html">Tierra de Hojas</a></li>
-                <li><a class="dropdown-item fs-4" href="plantas.html">Plantas</a></li>
-              </ul>
-            </li>
-            <li class="nav-item mx-4">
-              
-              <a class="nav-link" href="#"> <i class="fa-solid fa-cart-shopping mx-1"></i> Productos $0</a>
-
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cuenta.html">Mi cuenta <i class="fa-solid fa-user mx-1"></i></a>
-            </li>
-            
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="col align-self-start text-center  mt-5 p-3">
+      <h1 >  TIERRA  DE  HOJAS </h1>
+      <hr>
+    </div>
 
     <div class="container_cards">
       <div class="card">
@@ -75,8 +78,8 @@
           <img src="aseets/tierra1.jpeg" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>lorem8</p>
+          <h3>TIERRA DE HOJA TRADICIONAL</h3>
+          <p>$7.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -86,8 +89,8 @@
           <img src="aseets/tierra2.webp" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <h3>SUSTRATO PARA ALMACIGOS</h3>
+          <p>$9.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -97,8 +100,8 @@
           <img src="aseets/tierra3.webp" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>lorem8</p>
+          <h3>SUSTRATO REJUVENECEDOR</h3>
+          <p>$9.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -108,8 +111,8 @@
           <img src="aseets/tierra4.webp" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>lorem8</p>
+          <h3>CULTI GARDEN MULTIUSO</h3>
+          <p>$11.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -125,8 +128,8 @@
           <img src="aseets/tierra5.webp" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>lorem8</p>
+          <h3>CULTI GARDEN ORQUIDIA </h3>
+          <p>$11.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -136,8 +139,8 @@
           <img src="aseets/tierra6.webp" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <h3>CULTI GARDEN JARDIN </h3>
+          <p>$11.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -147,8 +150,8 @@
           <img src="aseets/tierra7.webp" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>lorem8</p>
+          <h3>CULTI GARDEN SUCULENTA</h3>
+          <p>$11.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
@@ -158,13 +161,75 @@
           <img src="aseets/tierra8.jpg" alt="asd">
         </figure>
         <div class="contenido">
-          <h3>Nombre macetero</h3>
-          <p>lorem8</p>
+          <h3>TIERRA CON ABONO</h3>
+          <p>$6.990</p>
           <a href="#">Añadir a carrito</a>
         </div>
       </div>
 
     </div>
+
+
+    <hr class="mt-5 p-1">
+    <hr class="mt-5 p-1">
+     <!--FOOTER--> 
+    <FOOter class="pie-pagina">
+      <div class="grupo-1">
+
+        <!--FRAME 1 FOOTER--> 
+
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          
+          <p>Somos una tienda en línea especializada en la venta de maceteros, plantas y tierra de hoja de alta calidad. Ofrecemos una amplia selección de productos y un servicio al cliente excepcional para asegurarnos de que nuestros clientes estén satisfechos. ¡Explora nuestra tienda en línea y descubre lo que tenemos para ofrecer!</p>
+          
+        </div>
+
+        <!--FRAME 2 FOOTER--> 
+
+        <div class="box">
+          <ul>
+            <li><h2> Contáctenos</h2></li>
+            
+            <li><a class="bi bi-whatsapp mt-2" style="font-size: 1rem;"> +56946936789</a></li>
+            <li><a href="#" class="bi bi-envelope-at-fill mt-2" style="font-size: 1rem;">   contacto@greenwings.cl</a></li>
+          </ul>
+        </div>
+
+        <!--FRAME 3 FOOTER--> 
+
+        <div class="box">
+          <ul>
+            <li><h2> Ayuda</h2></li>
+
+            <li> <a href="#" class="" style="font-size: 1rem;"> Políticas de privacidad</a></li>
+            <li> <a href="#" class="" style="font-size: 1rem;"> Términos y condiciones</a></li>
+            <li> <a href="#" class="" style="font-size: 1rem;"> Preguntas Frequentes</a></li>
+            <li> <a href="#" class="" style="font-size: 1rem;"> Cambios y devoluciones</a></li>
+          </ul>
+          
+        </div>
+
+        <!--FRAME 4 FOOTER--> 
+
+        <div class="box">
+          <h2>Síguenos</h2>
+          <div class="red-social">
+            <a href="#" ><i class="bi bi-facebook px-2" style="font-size: 2rem;"></i></a>
+            <a href="#" class="fa-brands fa-instagram px-2" style="font-size: 2rem;"></a>
+            <a href="#" class="fa-brands fa-twitter" style="font-size: 2rem;"></a>
+            <a href="#" class="fa-brands fa-youtube" style="font-size: 2rem;"></a>
+            <img src="aseets/webpay.png" alt="webpay" class="img-webpay mt-5">
+            
+          </div>
+        </div>
+      </div>
+      <hr>
+        <div class="grupo-2">
+          <small>&copy; 2023 <b>Jardinerías Grank</b> - Todos los derechos reservados</small>
+
+        </div>
+    </FOOter>
 
 
 
