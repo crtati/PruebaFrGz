@@ -1,419 +1,675 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css">
-  
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Incluir SweetAlert2 mediante CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/funciones.js"></script>
 
     <title>Prueba1</title>
   </head>
   <body>
-    <!-- HEADER NAV -->
-    <header class="encabezado-pagina">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fs-4 p-3 ">
-        <div class="container-fluid" >
-          <a class="navbar-brand" href="index.html" >
-            <span class="text-primary fs-4 fw-bold"> </span>
-            <img src="aseets/logo1.png" alt="" height="100px" width="100px" class="img-logo">
-          </a>
-  
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ms-auto mb-2 mx-4">
-  
-              <li class="nav-item mx-3 mt-2">
-                <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item mx-3 mt-2">
-                <a class="nav-link " aria-current="page" href="Ofertas.html">Ofertas</a></li>
-              <li class="nav-item mx-3 mt-2">
-                <a class="nav-link " aria-current="page" href="maceta.html">Maceteros</a></li>
-              <li class="nav-item mx-3 mt-2">
-                <a class="nav-link " aria-current="page" href="tierraHoja.html">Tierra de Hojas</a></li>
-              <li class="nav-item mx-3 mt-2">
-                <a class="nav-link" aria-current="page" href="plantas.html">Plantas</a></li>
-              </li>
-              
-            
-              <li class="nav-item mx-3 mt-2">
-                
-                <a class="nav-link" href="#"> <i class="fa-solid fa-cart-shopping mx-1 "></i> Productos $0</a>
-  
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cuenta.html">
-                <button type="button" class="btn btn-outline-info btn-lg mt-0" >Ingresa 
-                <i class="fa-solid fa-user mx-1"></i>
-                </button>
-                </a>
-            </li>
-              
-              
 
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- NAVEGACION-->
-
-<!--SECCION REGISTRO-->
-    <section class="vh-100 bg-white">
-      <div class="container py-9 h-100">
-        <div class="row d-flex align-items-center justify-content-center h-100">
-          <div class="col-md-8 col-lg-4 col-xl-6 vh-180">
-            <img src="aseets/imgregistro2.jpg"
-              class="img-fluid" alt="Phone image">
-          </div>
-          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form>
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="txt_correo" class="form-control form-control-lg" placeholder="ejemplo@gmail.com" />
-                <label class="form-label" for="lbl_correo">Correo Electronico</label>
-              </div>
-    
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="txt_contrasena" class="form-control form-control-lg" placeholder="********"/>
-                <label class="form-label" for="lbl_contrasena">Contraseña</label>
-              </div>
-    
-              <div class="d-flex justify-content-around align-items-center mb-4">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="chk_recordar" checked />
-                  <label class="form-check-label" for="chk_recordar"> Recordar </label>
-                </div>
-                
-    
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-sm btn-block">Ingresar</button>
-              
-              <button type="button" class="btn btn-info btn-sm mt-0" data-bs-toggle="modal" data-bs-target="#mdl_registro">
-                <i class="fa-solid fa-user mx-1 px-1"></i>Registrate aquí
-              </button>
-              
-              <label for="button">y obten 5% dcto</label>
-    
-              <!--<div class="divider d-flex align-items-center my-4">
-                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-              </div>
-    
-              <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
-                role="button">
-                <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+      
+        <!-- HEADER NAV -->
+        <header class="encabezado-pagina">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light fs-4 p-3">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                <span class="text-primary fs-4 fw-bold"> </span>
+                <img
+                  src="aseets/logo1.png"
+                  alt=""
+                  height="100px"
+                  width="100px"
+                  class="img-logo"
+                />
               </a>
-              <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
-                role="button">
-                <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>-->
-    
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
 
-<!--MODAL REGISTRO-->
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-    <div class="modal fade" id="mdl_registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mx-4">
+                  <li class="nav-item mx-3 mt-2">
+                    <a class="nav-link" aria-current="page" href="index.html"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item mx-3 mt-2">
+                    <a class="nav-link" aria-current="page" href="Ofertas.html"
+                      >Ofertas</a
+                    >
+                  </li>
+                  <li class="nav-item mx-3 mt-2">
+                    <a class="nav-link" aria-current="page" href="maceta.html"
+                      >Maceteros</a
+                    >
+                  </li>
+                  <li class="nav-item mx-3 mt-2">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="tierraHoja.html"
+                      >Tierra de Hojas</a
+                    >
+                  </li>
+                  <li class="nav-item mx-3 mt-2">
+                    <a class="nav-link" aria-current="page" href="plantas.html"
+                      ><i class="shake-horizontal"></i> Plantas</a
+                    >
+                  </li>
+
+                  <li class="nav-item mx-3 mt-2">
+                    <a class="nav-link" href="#">
+                      <i class="fa-solid fa-cart-shopping mx-1"></i> Productos
+                      $0</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cuenta.html">
+                      <button
+                        type="button"
+                        class="btn btn-outline-info btn-lg mt-0"
+                        id="btn_ingresa"
+                        
+                      > <script> </script>
+                        Ingresa
+                        <i class="fa-solid fa-user mx-1"></i>
+                      </button>
+                    </a>
+                  </li>
+                  <button
+                    class="btn btn-info btn-lg mt-0"
+                    aria-hidden="false"
+                    id="btn_in"
+                  >
+                    <i class="fa-solid fa-user mx-1"></i>
+                  </button>
+                </ul>
               </div>
+            </div>
+          </nav>
+        </header>
 
-              <div class="modal-body">
-                  <div class="mb-3 ">
-                      <label for="lbl_nombre" class="form-label">Nombre Completo</label>
-                      <input type="text" class="form-control" id="txt_nombre"
-                          placeholder="">
+        <!-- NAVEGACION-->
+
+        <!--SECCION REGISTRO-->
+        <div class="containerlogin">
+          <div class="containerforms">
+            <div class="container-header-navigation-form">
+              <div id="loginTap" class="navigation-item lefRadious selected">
+                <p>Iniciar</p>
+              </div>
+              <div id="registerTap" class="navigation-item rightRadious">
+                <p>Registrar</p>
+              </div>
+            </div>
+            <!--LOGIN-REGISTER-->
+            <div class="container-body-forms">
+              <!--LOGIN-->
+              <div id="login" class="form-design">
+                <h3 class="text-center">Ingresar</h3>
+                <form
+                  action="javascript:void(0)"
+                  id="formSubmitLogin"
+                  method="POST"
+                >
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      id="emaillogin"
+                      placeholder="Correo electronico"
+                      autocomplete="true"
+                      class="form-control1"
+                      required
+                    />
                   </div>
-                  
-                  <!--<div class="mb-3"> 
-                      <label for="cmb_profesor" class="form-label">Profesor</label>
-                          <select class="form-select" id="cmb_profesor" aria-label="Default select example">
-                          <option selected>-- Seleccione --</option>
-                          <option value="1">Fernando Sepulveda </option>
-                          <option value="2">Zlatan Ibrahimovic</option>
-                          <option value="3">Daniela Curiqueo</option>
-                          </select>
-                      </div>-->
 
-                      <div class="mb-3">
-                        <label for="lbl_correo" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="txt_correo"
-                            placeholder="ejemplo@correo.com">
-                      </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      name="password"
+                      id="passwordlogin"
+                      placeholder="Contrasena"
+                      autocomplete="true"
+                      class="form-control1"
+                      required
+                    />
+                  </div>
 
-                      <div class="mb-3">
-                        <label for="lbl_contrasena" class="form-label">Contraseña</label>
-                        <input type="email" class="form-control" id="txt_contrasena"
-                            placeholder="">
-                      </div>
-                      <div class="mb-3">
-                        <label for="lbl_confirma_contraseña" class="form-label">Confirmar Contraseña</label>
-                        <input type="email" class="form-control" id="txt_confirma_contraseña"
-                            placeholder="">
-                      </div>
+                  <button
+                    type="submit"
+                    class="btn btn-car"
+                    name="butn"
+                    id="butn"
+                    onclick="login()"
+                  >
+                  <span class="spinner-border spinner-border-sm" id="sp_loading" role="status" aria-hidden="true"></span>
+
+                    Login
+                  </button>
+                  <br/>
+                  <button type="submit" class="btn btn-light" name="btn_admin" onclick="loginAdmin()">Inicio Sesion Admin</button>
+                </form>
               </div>
-
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button"  class="btn btn-primary">Registrar</button>
+              
+              <!-- REGISTER-->
+              <div id="register" class="form-design">
+                <h3 class="text-center">Registrar</h3>
+                <form
+                  action="javascript:void(0)"
+                  id="formSubmitRegister"
+                  method="POST"
+                >
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      name="emailregister"
+                      id="emailregister"
+                      placeholder="Correo electronico"
+                      autocomplete="true"
+                      class="form-control1"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      name="passwordregister"
+                      id="passwordregister"
+                      placeholder="Contrasena"
+                      autocomplete="true"
+                      class="form-control1"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="nombreregister"
+                      id="nombreregister"
+                      placeholder="Nombre"
+                      autocomplete="true"
+                      class="form-control1"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="apellidoregister"
+                      id="apellidoregister"
+                      placeholder="Apellido"
+                      autocomplete="true"
+                      class="form-control1"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-car"
+                    name="butn"
+                    id="butn"
+                    onclick="almacenarUsuario()"
+                  >
+                    Registrarse
+                  </button>
+                </form>
               </div>
-          </div>
-      </div>
-  </div>
-    
-    
-   <!--MODAL Contacto-->
-
-   <div class="modal fade" id="mdl_contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Te responderemos a la brevedad</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <div class="modal-body">
-            <div class="mb-3 ">
-              <label for="lbl_nombre" class="form-label">Para:  </label>
-              <label for="lbl_nuestrocorreo"> contacto@greenwings.cl</label>>
             </div>
-
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Correo Electrónico</label>
-              <input type="email" class="form-control" id="txt_correo-motivo"
-                placeholder="nombre@correo.com">
-            </div>
-                
-            <div class="mb-3"> 
-              <label for="cmb_motivo-correo" class="form-label">Motivo</label>
-                <select class="form-select" id="cmb_motivo-correo" aria-label="Default select example">
-                <option selected>-- Seleccione --</option>
-                <option value="1">Devolución </option>
-                <option value="2">Problemas Producto</option>
-                <option value="3">Problemas Entrega</option>
-                <option value="3">otro</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="lbl_explicacion" class="form-label">Explicanos</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-
-                    
           </div>
+        </div>
+        <!--MODAL Contacto-->
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button"  class="btn btn-primary">Enviar</button>
-          </div>
-      </div>
-    </div>
-  </div>
-
-      <!--MODAL Terminos y condiciones-->
-
-      <div class="modal fade" id="mdl_tyd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div
+          class="modal fade"
+          id="mdl_contacto"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
               <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">TERMINOS Y CONDICIONES</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Te responderemos a la brevedad
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
-  
-              <div class="modal-body">
-                <div class="mb-3 ">
-                  <label for="lbl_tyd" class="form-label">I. ASPECTOS GENERALES
 
-                    El acceso y uso de este sitio web se rige por los Términos y Condiciones descritos a continuación, así como por la legislación que se aplique en la República de Chile. En consecuencia, todas las visitas, contratos y transacciones que se realicen en este sitio, como también sus efectos jurídicos, quedarán manejados por estas reglas y sometidas a esa legislación.
-                    Los Términos y Condiciones contenidos en este instrumento se aplicarán para formar parte de todos los actos y contratos que se ejecuten o celebren mediante los sistemas de oferta y comercialización comprendidos en este sitio web, entre los usuarios de este sitio, en adelante indistintamente también como el/los “Usuario/s”, el/los “Consumidor/es” o el/los “Cliente/s”, y B, en adelante, la “Empresa”, la cual es titular y administradora del sitio web www.decoplantas.cl, en adelante, el “sitio”. A continuación se exponen dichas condiciones:
-                    
-                    II. DERECHOS DEL USUARIO DE ESTE SITIO
-                    
-                    El usuario gozará de todos los derechos que le reconoce la legislación sobre protección al consumidor vigente en el territorio de Chile, además de los que se le otorgan en estos términos y condiciones.
-                    El usuario dispondrá en todo momento de los derechos de información, rectificación y cancelación de los datos personales conforme a la Ley Nº19.628 sobre protección de datos de carácter personal.
-                    La sola visita de este sitio en el cual se ofrecen determinados bienes y el acceso a determinados servicios, no impone al consumidor obligación alguna, a menos que haya aceptado en forma inequívoca las condiciones ofrecidas por el proveedor, en la forma indicada en estos términos y condiciones.
-                    
-                    III. PROCEDIMIENTO PARA HACER USO DE ESTE SITIO INTERNET
-                    
-                    En los contratos ofrecidos por medio de este sitio, la empresa oferente informará, de manera inequívoca y fácilmente accesible, los pasos que deben seguirse para celebrarlos.
-                    El sólo hecho de seguir los pasos, que para tales efectos se indican en este sitio para efectuar una compra, equivale a aceptar que la empresa oferente ha dado cumplimiento a las condiciones contenidas en este número. Además, indicará su dirección de correo electrónico y los medios técnicos a disposición del consumidor para identificar y corregir, errores en el envío o en sus datos.
-                    
-                     </label>
-                  
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="lbl_nombre" class="form-label">Para: </label>
+                  <label for="lbl_nuestrocorreo"> contacto@greenwings.cl</label
+                  >>
                 </div>
-  
-                
-  
-                        
+
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Correo Electrónico</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="txt_correo-motivo"
+                    placeholder="nombre@correo.com"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="cmb_motivo-correo" class="form-label"
+                    >Motivo</label
+                  >
+                  <select
+                    class="form-select"
+                    id="cmb_motivo-correo"
+                    aria-label="Default select example"
+                  >
+                    <option selected>-- Seleccione --</option>
+                    <option value="1">Devolución</option>
+                    <option value="2">Problemas Producto</option>
+                    <option value="3">Problemas Entrega</option>
+                    <option value="3">otro</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="lbl_explicacion" class="form-label"
+                    >Explicanos</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
               </div>
-  
+
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+                <button type="button" class="btn btn-primary">Enviar</button>
               </div>
+            </div>
           </div>
         </div>
-      </div>
 
-       <!--MODAL Politicas de Privacidad-->
+        <!--MODAL Terminos y condiciones-->
 
-       <div class="modal fade" id="mdl_politicas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div
+          class="modal fade"
+          id="mdl_tyd"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
               <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">TERMINOS Y CONDICIONES</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  TERMINOS Y CONDICIONES
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
-  
+
               <div class="modal-body">
-                <div class="mb-3 ">
-                  <label for="lbl_tyd" class="form-label">Gastos de envío
-                    Envíos express a toda España Peninsular.
-                    El coste del envío variará en función del peso y destino de las plantas, maceteros o accesorios.
-                    Entregas
-                    Recibirás tus plantas entre 24 y 72 horas en días laborales.
-                    El horario de entrega es de lunes a viernes entre 9:00 a 20:00h. Por el momento no podemos garantizar una hora exacta de entrega.
-                    Si tu pedido ya ha sido enviado no podrá ser cancelado mientras esté en camino.
-                    Sobre tu pedido
-                    Las plantas y las macetas se venden por separado. Las fotos de las plantas con las macetas en nuestra web son una referencia visual para ayudarte a escoger.
-                    Asegúrate de mirar tu carrito de compra, allí podrás ver todos los productos de tu pedido y agregar o eliminar plantas o macetas.
-                    Envíos incorrectos o incompletos
-                    Asegúrate de que la dirección de envío sea la correcta. No podremos garantizar la entrega si estos datos son incorrectos o están incompletos.
-                    Si verificamos que la información facilitada no es correcta, nos pondremos en contacto contigo para corregirlos y/o solicitar detalles adicionales.
-                    Ten en cuenta que la modificación de estos datos influirá en la fecha de entrega.
-                    Los pedidos que no puedan ser entregados a tiempo debido a información incorrecta, o incompleta, no se podrán devolver.
-                    Entrega en lugares distintos al domicilio habitual
-                    Las entregas en hospitales, empresas, universidades o edificios públicos no están garantizadas aunque en la mayoría de ocasiones, se realizan sin ningún problema.
-                    Si tu pedido va dirigido a alguno de estos destinos, por favor, facilítanos un teléfono de contacto y toda la información adicional necesaria para asegurarnos de que el envío llega efectivamente a manos del destinatario final.
-                    Devoluciones
-                    Nos esforzamos para que tu planta llegue hasta ti sana y perfecta.
-                    Si consideras que tu planta no ha llegado en las mejores condiciones, puedes devolverla: contáctanos o escríbenos directamente a hello@be.green e incluye una foto de la planta.
-                    Tienes hasta 20 días para devolver tu planta después de haberla recibido.
-                    Recibirás una nueva planta en la mayor brevedad posible.
-                    Ten en cuenta que aunque tratamos de que las plantas sean lo más parecidas posible a las que aparecen en nuestra web, cada planta es un ser vivo único. Por ello, es natural que no sean exactamente iguales, no siendo éste un motivo aceptable para su devolución.
-                    Para devolución de accesorios y maceteros; se pueden devolver a nuestro vivero y una vez recibido se hará la devolución del importe. El coste de envío es a cargo del cliente.
-                     </label>
-                  
+                <div class="mb-3">
+                  <label for="lbl_tyd" class="form-label"
+                    >I. ASPECTOS GENERALES El acceso y uso de este sitio web se
+                    rige por los Términos y Condiciones descritos a
+                    continuación, así como por la legislación que se aplique en
+                    la República de Chile. En consecuencia, todas las visitas,
+                    contratos y transacciones que se realicen en este sitio,
+                    como también sus efectos jurídicos, quedarán manejados por
+                    estas reglas y sometidas a esa legislación. Los Términos y
+                    Condiciones contenidos en este instrumento se aplicarán para
+                    formar parte de todos los actos y contratos que se ejecuten
+                    o celebren mediante los sistemas de oferta y
+                    comercialización comprendidos en este sitio web, entre los
+                    usuarios de este sitio, en adelante indistintamente también
+                    como el/los “Usuario/s”, el/los “Consumidor/es” o el/los
+                    “Cliente/s”, y B, en adelante, la “Empresa”, la cual es
+                    titular y administradora del sitio web www.decoplantas.cl,
+                    en adelante, el “sitio”. A continuación se exponen dichas
+                    condiciones: II. DERECHOS DEL USUARIO DE ESTE SITIO El
+                    usuario gozará de todos los derechos que le reconoce la
+                    legislación sobre protección al consumidor vigente en el
+                    territorio de Chile, además de los que se le otorgan en
+                    estos términos y condiciones. El usuario dispondrá en todo
+                    momento de los derechos de información, rectificación y
+                    cancelación de los datos personales conforme a la Ley
+                    Nº19.628 sobre protección de datos de carácter personal. La
+                    sola visita de este sitio en el cual se ofrecen determinados
+                    bienes y el acceso a determinados servicios, no impone al
+                    consumidor obligación alguna, a menos que haya aceptado en
+                    forma inequívoca las condiciones ofrecidas por el proveedor,
+                    en la forma indicada en estos términos y condiciones. III.
+                    PROCEDIMIENTO PARA HACER USO DE ESTE SITIO INTERNET En los
+                    contratos ofrecidos por medio de este sitio, la empresa
+                    oferente informará, de manera inequívoca y fácilmente
+                    accesible, los pasos que deben seguirse para celebrarlos. El
+                    sólo hecho de seguir los pasos, que para tales efectos se
+                    indican en este sitio para efectuar una compra, equivale a
+                    aceptar que la empresa oferente ha dado cumplimiento a las
+                    condiciones contenidas en este número. Además, indicará su
+                    dirección de correo electrónico y los medios técnicos a
+                    disposición del consumidor para identificar y corregir,
+                    errores en el envío o en sus datos.
+                  </label>
                 </div>
-  
-                
-  
-                        
               </div>
-  
+
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Salir
+                </button>
               </div>
+            </div>
           </div>
         </div>
-      </div>
 
+        <!--MODAL Politicas de Privacidad-->
 
+        <div
+          class="modal fade"
+          id="mdl_politicas"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  TERMINOS Y CONDICIONES
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
 
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="lbl_tyd" class="form-label"
+                    >Gastos de envío Envíos express a toda España Peninsular. El
+                    coste del envío variará en función del peso y destino de las
+                    plantas, maceteros o accesorios. Entregas Recibirás tus
+                    plantas entre 24 y 72 horas en días laborales. El horario de
+                    entrega es de lunes a viernes entre 9:00 a 20:00h. Por el
+                    momento no podemos garantizar una hora exacta de entrega. Si
+                    tu pedido ya ha sido enviado no podrá ser cancelado mientras
+                    esté en camino. Sobre tu pedido Las plantas y las macetas se
+                    venden por separado. Las fotos de las plantas con las
+                    macetas en nuestra web son una referencia visual para
+                    ayudarte a escoger. Asegúrate de mirar tu carrito de compra,
+                    allí podrás ver todos los productos de tu pedido y agregar o
+                    eliminar plantas o macetas. Envíos incorrectos o incompletos
+                    Asegúrate de que la dirección de envío sea la correcta. No
+                    podremos garantizar la entrega si estos datos son
+                    incorrectos o están incompletos. Si verificamos que la
+                    información facilitada no es correcta, nos pondremos en
+                    contacto contigo para corregirlos y/o solicitar detalles
+                    adicionales. Ten en cuenta que la modificación de estos
+                    datos influirá en la fecha de entrega. Los pedidos que no
+                    puedan ser entregados a tiempo debido a información
+                    incorrecta, o incompleta, no se podrán devolver. Entrega en
+                    lugares distintos al domicilio habitual Las entregas en
+                    hospitales, empresas, universidades o edificios públicos no
+                    están garantizadas aunque en la mayoría de ocasiones, se
+                    realizan sin ningún problema. Si tu pedido va dirigido a
+                    alguno de estos destinos, por favor, facilítanos un teléfono
+                    de contacto y toda la información adicional necesaria para
+                    asegurarnos de que el envío llega efectivamente a manos del
+                    destinatario final. Devoluciones Nos esforzamos para que tu
+                    planta llegue hasta ti sana y perfecta. Si consideras que tu
+                    planta no ha llegado en las mejores condiciones, puedes
+                    devolverla: contáctanos o escríbenos directamente a
+                    hello@be.green e incluye una foto de la planta. Tienes hasta
+                    20 días para devolver tu planta después de haberla recibido.
+                    Recibirás una nueva planta en la mayor brevedad posible. Ten
+                    en cuenta que aunque tratamos de que las plantas sean lo más
+                    parecidas posible a las que aparecen en nuestra web, cada
+                    planta es un ser vivo único. Por ello, es natural que no
+                    sean exactamente iguales, no siendo éste un motivo aceptable
+                    para su devolución. Para devolución de accesorios y
+                    maceteros; se pueden devolver a nuestro vivero y una vez
+                    recibido se hará la devolución del importe. El coste de
+                    envío es a cargo del cliente.
+                  </label>
+                </div>
+              </div>
 
-
-    
-   <!--FOOTER--> 
-  <FOOter class="pie-pagina">
-    <div class="grupo-1">
-
-      <!--FRAME 1 FOOTER--> 
-
-      <div class="box">
-        <h2>Sobre Nosotros</h2>
-        
-        <p>Somos una tienda en línea especializada en la venta de maceteros, plantas y tierra de hoja de alta calidad. Ofrecemos una amplia selección de productos y un servicio al cliente excepcional para asegurarnos de que nuestros clientes estén satisfechos. ¡Explora nuestra tienda en línea y descubre lo que tenemos para ofrecer!</p>
-        
-      </div>
-
-      <!--FRAME 2 FOOTER--> 
-
-      <div class="box">
-        <ul>
-          <li><h2> Contáctenos</h2></li>
-          
-          <li><a class="bi bi-whatsapp mt-2" style="font-size: 1rem;"> +56946936789</a></li>
-          
-          <li><a href="#" class="bi bi-house-fill px-2">      Santiago, Brasil 653</a></li>
-          <li><label class="mt-5"for="lbl_msjecorreo">Escribenos aquí</label></li>
-          <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#mdl_contacto">
-            <i class="bi bi-envelope-at-fill mt-2"></i>       contacto@greenwings.cl
-          </button>
-        </ul>
-      </div>
-
-      <!--FRAME 3 FOOTER--> 
-
-      <div class="box">
-        <ul>
-          <li><h2> Ayuda</h2></li>
-
-          <li> <a href="#" class="" style="font-size: 1rem;"data-bs-toggle="modal" data-bs-target="#mdl_politicas"> Políticas de privacidad</a></li>
-          <li> <a href="#" class="" style="font-size: 1rem;"data-bs-toggle="modal" data-bs-target="#mdl_tyd"> Términos y condiciones</a></li>
-          <li> <a href="Seguimiento.html" class="" style="font-size: 1rem;"> Seguimiento y Despacho</a></li>
-          <li> <a href="historial.html" class="" style="font-size: 1rem;"> Historial de Compras</a></li>
-        </ul>
-        
-      </div>
-
-      <!--FRAME 4 FOOTER--> 
-
-      <div class="box">
-        <h2>Síguenos</h2>
-        <div class="red-social">
-          <a href="#" ><i class="bi bi-facebook px-2" style="font-size: 2rem;"></i></a>
-          <a href="#" class="fa-brands fa-instagram px-2" style="font-size: 2rem;"></a>
-          <a href="#" class="fa-brands fa-twitter" style="font-size: 2rem;"></a>
-          <a href="#" class="fa-brands fa-youtube" style="font-size: 2rem;"></a>
-          <img src="aseets/webpay.png" alt="webpay" class="img-webpay mt-5">
-          
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Salir
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <hr>
-      <div class="grupo-2">
-        <small>&copy; 2023 <b>Jardinerías Grank</b> - Todos los derechos reservados</small>
 
-      </div>
-  </FOOter>
+        <!--FOOTER-->
+        <footer class="pie-pagina">
+          <div class="grupo-1">
+            <!--FRAME 1 FOOTER-->
 
+            <div class="box">
+              <h2>Sobre Nosotros</h2>
 
+              <p>
+                Somos una tienda en línea especializada en la venta de
+                maceteros, plantas y tierra de hoja de alta calidad. Ofrecemos
+                una amplia selección de productos y un servicio al cliente
+                excepcional para asegurarnos de que nuestros clientes estén
+                satisfechos. ¡Explora nuestra tienda en línea y descubre lo que
+                tenemos para ofrecer!
+              </p>
+            </div>
 
+            <!--FRAME 2 FOOTER-->
 
+            <div class="box">
+              <ul>
+                <li><h2>Contáctenos</h2></li>
 
- 
-  <!-- Optional JavaScript; choose one of the two! -->
+                <li>
+                  <a class="bi bi-whatsapp mt-2" style="font-size: 1rem">
+                    +56946936789</a
+                  >
+                </li>
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  
-</body>
+                <li>
+                  <a href="#" class="bi bi-house-fill px-2">
+                    Santiago, Brasil 653</a
+                  >
+                </li>
+                <li>
+                  <label class="mt-5" for="lbl_msjecorreo"
+                    >Escribenos aquí</label
+                  >
+                </li>
+                <button
+                  type="button"
+                  class="btn btn-outline-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#mdl_contacto"
+                >
+                  <i class="bi bi-envelope-at-fill mt-2"></i>
+                  contacto@greenwings.cl
+                </button>
+              </ul>
+            </div>
+
+            <!--FRAME 3 FOOTER-->
+
+            <div class="box">
+              <ul>
+                <li><h2>Ayuda</h2></li>
+
+                <li>
+                  <a
+                    href="#"
+                    class=""
+                    style="font-size: 1rem"
+                    data-bs-toggle="modal"
+                    data-bs-target="#mdl_politicas"
+                  >
+                    Políticas de privacidad</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class=""
+                    style="font-size: 1rem"
+                    data-bs-toggle="modal"
+                    data-bs-target="#mdl_tyd"
+                  >
+                    Términos y condiciones</a
+                  >
+                </li>
+                <li>
+                  <a href="Seguimiento.html" class="" style="font-size: 1rem">
+                    Seguimiento y Despacho</a
+                  >
+                </li>
+                <li>
+                  <a href="historial.html" class="" style="font-size: 1rem">
+                    Historial de Compras</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!--FRAME 4 FOOTER-->
+
+            <div class="box">
+              <h2>Síguenos</h2>
+              <div class="red-social">
+                <a href="#"
+                  ><i class="bi bi-facebook px-2" style="font-size: 2rem"></i
+                ></a>
+                <a
+                  href="#"
+                  class="fa-brands fa-instagram px-2"
+                  style="font-size: 2rem"
+                ></a>
+                <a
+                  href="#"
+                  class="fa-brands fa-twitter"
+                  style="font-size: 2rem"
+                ></a>
+                <a
+                  href="#"
+                  class="fa-brands fa-youtube"
+                  style="font-size: 2rem"
+                ></a>
+                <img
+                  src="aseets/webpay.png"
+                  alt="webpay"
+                  class="img-webpay mt-5"
+                />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="grupo-2">
+            <small
+              >&copy; 2023 <b>Jardinerías Grank</b> - Todos los derechos
+              reservados</small
+            >
+          </div>
+        </footer>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"
+        ></script>
+        <script src="js/funciones.js"></script>
+      </body>
+    </html>
+  </body>
 </html>
