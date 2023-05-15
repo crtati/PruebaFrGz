@@ -24,7 +24,42 @@ $(function () {
   })
 })
 
+function comprarAlmacenar(){
+  var correo = localStorage.getItem('correo');
+  console.log(correo)
+  var data = {
+    nombreFuncion: "CompraAlmacenar",
+    parametros: [correo]
+  };
 
+  $.ajax({
+    method: "POST",
+    url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+    data: JSON.stringify(data),
+    success: function (response) {
+      
+      localStorage.setItem('idCompra', response.result[0].RESPUESTA)
+      
+    }
+  })
+  
+}
+function agregarProducto(codigo_producto, cantidad){
+ 
+  var idcompra= localStorage.getItem('idCompra');
+  
+  var data = {
+    nombreFuncion: "CompraDetalleAlmacenar",
+    parametros: [idcompra,codigo_producto,cantidad]
+  };
+  $.ajax({
+    method: "POST",
+    url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php",
+    data: JSON.stringify(data),
+    success: function (response) {
+      console.log(response)
+    }})
+}
 function almacenarUsuario() {
   var correo = $("#emailregister").val();
   var contrasena = $("#passwordregister").val();
@@ -114,10 +149,11 @@ function login() {
         console.log(response.result)
         console.log(correo)
           if (response.result == 'LOGIN OK') {
-            const islogin=localStorage.setItem(correo, 'correo')
+
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('correo', correo);
+            
             $('#sp_loading').show();
-            console.log(islogin)
-            isLogin=true;
             setTimeout(() => {
               
               Swal.fire({
@@ -126,9 +162,6 @@ function login() {
                   icon: 'success',
                   confirmButtonText: 'OK'
               });
-              
-              $("#btn_in").show();
-              $("#btn_ingresa").hide()
               $('#sp_loading').fadeOut();
               }, 1500);
               ;
@@ -301,6 +334,43 @@ function almacenarProducto() {
       }
   });
 }
+function listarProductos() {
+  $.ajax({
+      method: "GET",
+      url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar",
+      success: function (response) {
+          console.log(response.result);
+          
+          const $cardsContainer = $('#div_productos');
+
+          response.result.forEach((card) => {
+              // Crear una nueva card con jQuery
+              const $card = $('<div>', { class: 'col-sm-4 mb-4' }).append(
+                $('<div>', { class: 'card' }).append(
+                  //$('<img>', { class: 'card-img-top', src: card.image, alt: card.title }),
+                  $('<div>', { class: 'card-body' }).append(
+                    $('<h5>', { class: 'card-title', text: card.NOMBRE }),
+                    $('<p>', { class: 'card-text', text: card.DESCRIPCION }),
+                    $('<button>', { class: 'btn btn-primary boton', text: 'Agregar', 
+                      onclick: "agregarProducto(\"" + card.CODIGO+ "\", 999)", type:"button" })
+
+                  )
+                )
+              );
+              // Agregar la card al contenedor
+              $cardsContainer.append($card);
+          })
+      },
+      error: function (error) {
+          console.log(error);
+      }
+  });
+}
+
+function cerrarSesion() {
+  localStorage.removeItem('isLoggedIn');
+}
+
 /*function login() {
   let usuario = $("#txt_usuario").val();
   let contrasena = $("#txt_contrasena_login").val();
