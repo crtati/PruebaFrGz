@@ -39,6 +39,7 @@ function comprarAlmacenar(){
     success: function (response) {
       
       localStorage.setItem('idCompra', response.result[0].RESPUESTA)
+      console.log(response.result[0].RESPUESTA)
       
     }
   })
@@ -58,6 +59,9 @@ function agregarProducto(codigo_producto, cantidad){
     data: JSON.stringify(data),
     success: function (response) {
       console.log(response)
+      console.log(idcompra)
+      console.log(codigo_producto)
+      console.log(cantidad)
     }})
 }
 function almacenarUsuario() {
@@ -165,11 +169,8 @@ function login() {
               $('#sp_loading').fadeOut();
               }, 1500);
               ;
+              setTimeout(() => {$(window.location.href = "index.html");},4000);
 
-              /*var miModal = document.getElementById("cuenta.html");
-              $(miModal).modal("hide");*/
-              
-              /*setTimeout(() => {$(window.location.href = "index.html");},4000);*/
                 
               /*almacenarCompraID()*/
               
@@ -334,31 +335,41 @@ function almacenarProducto() {
       }
   });
 }
-function listarProductos() {
+function listarProductosPRUEBA() {
   $.ajax({
       method: "GET",
       url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar",
       success: function (response) {
           console.log(response.result);
           
-          const $cardsContainer = $('#div_productos');
+          const $cardsContainer = $('#div_contenidos');
 
           response.result.forEach((card) => {
               // Crear una nueva card con jQuery
-              const $card = $('<div>', { class: 'col-sm-4 mb-4' }).append(
-                $('<div>', { class: 'card' }).append(
-                  //$('<img>', { class: 'card-img-top', src: card.image, alt: card.title }),
-                  $('<div>', { class: 'card-body' }).append(
-                    $('<h5>', { class: 'card-title', text: card.NOMBRE }),
-                    $('<p>', { class: 'card-text', text: card.DESCRIPCION }),
-                    $('<button>', { class: 'btn btn-primary boton', text: 'Agregar', 
-                      onclick: "agregarProducto(\"" + card.CODIGO+ "\", 999)", type:"button" })
-
-                  )
-                )
-              );
+                console.log(card.CODIGO)
+                if (card.CODIGO.startsWith('GL')) {
+                  if(card.STOCK!=0){
+                    const $card = $('<div>', { class: 'col-4 mb-4', name: 'card' }).append(
+                      $('<div>', { class: 'card' }).append(
+                        //$('<img>', { class: 'card-img-top', src: card.image, alt: card.title }),
+                        
+                        $('<div>', { class: 'card-body' }).append(
+                          $('<h5>', { class: 'card-title', text: card.NOMBRE }),
+                          $('<p>', { class: 'card-text', text: card.DESCRIPCION }),
+                          $('<p>', { class: 'card-text', text: card.PRECIO }),
+                          $('<p>', { class: 'card-text', text: card.STOCK }),
+                          
+                          $('<button>', { class: 'btn btn-primary boton', text: 'Agregar',
+                              onclick: "agregarProducto(\"" + card.CODIGO+ "\", 999)", type:"button" })
+      
+                        )
+                      )
+                    );;$cardsContainer.append($card)
+                  }
+                }
+              
               // Agregar la card al contenedor
-              $cardsContainer.append($card);
+              
           })
       },
       error: function (error) {
@@ -366,7 +377,6 @@ function listarProductos() {
       }
   });
 }
-
 function cerrarSesion() {
   localStorage.removeItem('isLoggedIn');
 }
@@ -409,4 +419,37 @@ function cerrarSesion() {
       }, 3000);
     }
   }
+}*/
+/*function listarProductos() {
+  $.ajax({
+      method: "GET",
+      url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar",
+      success: function (response) {
+          console.log(response.result);
+          
+          const $cardsContainer = $('#div_productos');
+
+          response.result.forEach((card) => {
+              // Crear una nueva card con jQuery
+              const $card = $('<div>', { class: 'col-sm-4 mb-4' }).append(
+                $('<div>', { class: 'card' }).append(
+                  //$('<img>', { class: 'card-img-top', src: card.image, alt: card.title }),
+                  $('<div>', { class: 'card-body' }).append(
+                    $('<h5>', { class: 'card-title', text: card.NOMBRE }),
+                    $('<p>', { class: 'card-text', text: card.DESCRIPCION }),
+                    
+                    $('<button>', { class: 'btn btn-primary boton', text: 'Agregar', 
+                      onclick: "agregarProducto(\"" + card.CODIGO+ "\", 999)", type:"button" })
+
+                  )
+                )
+              );
+              // Agregar la card al contenedor
+              $cardsContainer.append($card);
+          })
+      },
+      error: function (error) {
+          console.log(error);
+      }
+  });
 }*/

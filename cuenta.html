@@ -87,17 +87,17 @@
                       >Inicio</a
                     >
                   </li>
-                  <li class="nav-item mx-3 mt-2">
+                  <!--<li class="nav-item mx-3 mt-2">
                     <a class="nav-link" aria-current="page" href="Ofertas.html"
                       >Ofertas</a
                     >
-                  </li>
+                  </li>-->
                   <li class="nav-item mx-3 mt-2">
                     <a class="nav-link" aria-current="page" href="maceta.html"
                       >Maceteros</a
                     >
                   </li>
-                  <li class="nav-item mx-3 mt-2">
+                  <!--<li class="nav-item mx-3 mt-2">
                     <a
                       class="nav-link"
                       aria-current="page"
@@ -109,34 +109,37 @@
                     <a class="nav-link" aria-current="page" href="plantas.html"
                       ><i class="shake-horizontal"></i> Plantas</a
                     >
-                  </li>
+                  </li>-->
 
-                  <li class="nav-item mx-3 mt-2">
+                  <li class="nav-item mx-3 mt-2" id="shoppingCart" style="display: block;">
                     <a class="nav-link" href="#">
-                      <i class="fa-solid fa-cart-shopping mx-1"></i> Productos
-                      $0</a
+                      <i class="fa-solid fa-cart-shopping mx-1"></i> Productos $0</a
                     >
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item1 mx-3 mt-2" id="loginButton" style="display: block;" >
+                    <div >
+                      <a class="nav-item mx-3 mt-2" href="index.html">
+                      <button type="button"class="btn btn-outline-info btn-lg mt-0">
+                        Ingresa
+                      <i class="fa-solid fa-user mx-1"></i>
+                      </button>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="nav-item1 mx-3 mt-2" id="cerrarSesion" style="display: none;">
+                    <div >
                     <a class="nav-link" href="cuenta.html">
                       <button
                         type="button"
                         class="btn btn-outline-info btn-lg mt-0"
-                        id="btn_ingresa"
-                        
-                      > <script> </script>
-                        Ingresa
+                        onclick="cerrarSesion()"
+                      >
+                        Cerrar sesion
                         <i class="fa-solid fa-user mx-1"></i>
                       </button>
+                      
                     </a>
                   </li>
-                  <button
-                    class="btn btn-info btn-lg mt-0"
-                    aria-hidden="false"
-                    id="btn_in"
-                  >
-                    <i class="fa-solid fa-user mx-1"></i>
-                  </button>
                 </ul>
               </div>
             </div>
@@ -146,7 +149,7 @@
         <!-- NAVEGACION-->
 
         <!--SECCION REGISTRO-->
-        <div class="containerlogin">
+        <div class="containerlogin" >
           <div class="containerforms">
             <div class="container-header-navigation-form">
               <div id="loginTap" class="navigation-item lefRadious selected">
@@ -194,9 +197,12 @@
                     type="submit"
                     class="btn btn-car"
                     name="butn"
-                    id="butn"
-                    onclick="login()"
+                    id="butnlog"
+                    onclick="login()"  
+                    
                   >
+                  <a class="nav-link1" aria-current="page" href="index.html"></a>
+
                   <span class="spinner-border spinner-border-sm" id="sp_loading" role="status" aria-hidden="true"></span>
 
                     Login
@@ -663,6 +669,17 @@
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
+
+       <script>
+        let valor = localStorage.getItem('isLoggedIn');
+       console.log(valor);
+       if (valor != null) {
+        
+         document.getElementById('shoppingCart').style.display = 'none';
+         document.getElementById('loginButton').style.display = 'none';
+         document.getElementById('cerrarSesion').style.display = 'block';
+       }
+     </script>
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

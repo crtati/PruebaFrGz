@@ -32,10 +32,11 @@ body{
 .container_cards {
   width: 100%;
   display: flex;
-
+  box-sizing: border-box;
   justify-content: space-around;
   flex-wrap: wrap;
   object-fit: fill;
+  grid-template-columns:(2,1fr);
 }
 
 .containerlogin {
@@ -195,7 +196,9 @@ body{
   text-align: center;
   cursor: pointer;
 }
-
+.div_productos{
+  width: auto;
+}
 .lefRadious {
   border-top-left-radius: 10px;
 }
@@ -324,6 +327,29 @@ form button[type="submit"] {
   cursor: default;
   transition: all 400ms ease;
 }
+.card button[type="submit"] {
+  width: 60%;
+  margin: auto;
+  padding: 8px 16px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  background-color: rgb(162, 31, 255);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  transition: all 400ms ease;
+}
+.card button[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(144, 19, 234);
+  color: #f2f2f2;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-15%);
+  opacity: 0.5;
+  animation: shadow-inset-center 1.5 lin linear both ;
+}
+
 form button[type="submit"]:hover {
   cursor: pointer;
   background-color: rgb(144, 19, 234);
@@ -416,6 +442,7 @@ textarea {
 }*/
 .card {
   width: 300px;
+  height: 380px ;
   margin: 20px;
   border-radius: 6px;
   overflow: hidden;
@@ -424,12 +451,23 @@ textarea {
   cursor: default;
   transition: all 400ms ease;
 }
+.nav-item{
+  border-bottom: 3px solid transparent;
+}
+.nav-item:hover {
+  border-bottom: 3px solid rgb(104, 23, 162);
+}
 
+.nav-item.active {
+  border-bottom: 3px solid rgb(104, 23, 162);
+}
 .card:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-3%);
 }
-
+.navbarSupportedContent{
+  color: #0062e6;
+}
 .card img {
   width: 330px;
   height: 280px;
