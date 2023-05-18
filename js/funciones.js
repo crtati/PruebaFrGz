@@ -136,6 +136,15 @@ function almacenarUsuario() {
     },
   });
 }
+function validarLogin(){
+  var correo = $("#emaillogin").val();
+  var contrasena = $("#passwordlogin").val();
+  if (correo == ''|| contrasena==''){
+    console.log('RELLENA LOS DATOS')
+  }else{
+    login();
+  }
+}
 function login() {
   var correo = $("#emaillogin").val();
   var contrasena = $("#passwordlogin").val();
@@ -270,6 +279,21 @@ function loginAdmin() {
       }
   });
 }
+
+/*ESTA FUNCION SOLO VERIFICA SI LOS CAMPOS ESTAN VACIOS */
+function validarAlmacenarProducto(){
+  var codigo = $("#codeprd").val();
+  var nombre = $("#nombreprd").val();
+  var descripcion = $("#descprd").val();
+  var precio = $("#precioprd").val();
+  var stock = $("#stockprd").val();
+  if(codigo==''||nombre==''||descripcion==''||precio==''||stock==''){
+    console.log('RELLENA BIEN LOS DATOS DEL PRODUCTO')
+  }else{
+    almacenarProducto();//LLAMAMOS A LA FUNCION DE ABAJO PARA QUE CUANDO LOS CAMPOS ESTEN LLENOS, ALMACENE EL PRODUCTO
+  }
+}
+
 function almacenarProducto() {
   var codigo = $("#codeprd").val();
   var nombre = $("#nombreprd").val();
@@ -335,48 +359,33 @@ function almacenarProducto() {
       }
   });
 }
-function listarProductosPRUEBA() {
-  $.ajax({
-      method: "GET",
-      url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar",
-      success: function (response) {
-          console.log(response.result);
-          
-          const $cardsContainer = $('#div_contenidos');
 
-          response.result.forEach((card) => {
-              // Crear una nueva card con jQuery
-                console.log(card.CODIGO)
-                if (card.CODIGO.startsWith('GL')) {
-                  if(card.STOCK!=0){
-                    const $card = $('<div>', { class: 'col-4 mb-4', name: 'card' }).append(
-                      $('<div>', { class: 'card' }).append(
-                        //$('<img>', { class: 'card-img-top', src: card.image, alt: card.title }),
-                        
-                        $('<div>', { class: 'card-body' }).append(
-                          $('<h5>', { class: 'card-title', text: card.NOMBRE }),
-                          $('<p>', { class: 'card-text', text: card.DESCRIPCION }),
-                          $('<p>', { class: 'card-text', text: card.PRECIO }),
-                          $('<p>', { class: 'card-text', text: card.STOCK }),
-                          
-                          $('<button>', { class: 'btn btn-primary boton', text: 'Agregar',
-                              onclick: "agregarProducto(\"" + card.CODIGO+ "\", 999)", type:"button" })
-      
-                        )
-                      )
-                    );;$cardsContainer.append($card)
-                  }
-                }
-              
-              // Agregar la card al contenedor
-              
-          })
-      },
-      error: function (error) {
-          console.log(error);
-      }
-  });
+function generarCardsModal() {
+  var modalContent = '';
+
+  for (var i = 0; i < productosFiltrados.length; i++) {
+    var producto = productosFiltrados[i];
+    var precio = Math.max(Math.floor(Math.random() * 10) * 1000, 1000); // Generar precio aleatorio multiplos de 1000 y k no sea menor a lukita 
+
+    modalContent += '<div class="col-md-4 mb-4">' +
+    '<div class="card">' +
+    '<div class="card-body">' +
+    '<h5 class="card-title text-primary">' + producto.NOMBRE + '</h5>' +
+    '<p class="card-text">' + producto.DESCRIPCION + '</p>' +
+    '<p class="card-text">Precio: $' + precio + '</p>' +
+    '<p class="card-text">Stock: ' + producto.STOCK + '</p>' +
+    '<div class="text-center">' +
+    '<a href="#" class="btn btn-primary btn-sm">Comprar</a>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>';
+  }
+
+  var modalBody = document.getElementById('modalBody');
+  modalBody.innerHTML = '<div class="row">' + modalContent + '</div>';
 }
+
 function cerrarSesion() {
   localStorage.removeItem('isLoggedIn');
 }
@@ -453,3 +462,68 @@ function cerrarSesion() {
       }
   });
 }*/
+
+/*FUNCION PARA TRAER TUS PRODUCTOS DE LA API */
+var productosFiltrados = [];
+function traerProductosApi(){
+    $.ajax({
+        method: "GET",
+        url: "https://fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar",
+        CODIGO: 'GL*', fields: 'CODIGO,NOMBRE,DESCRIPCION,STOCK',
+        
+        success: function (response){
+
+            var result = response.result;
+
+            $.each(result, function(index, product) {
+                var productCodigo = product.CODIGO;
+                var productNombre = product.NOMBRE;
+                var productDescripcion = product.DESCRIPCION;
+                var productStock = product.STOCK;
+              // Filtra los productos que cumplen con el criterio CAJ
+                if (productCodigo.startsWith('GL')) {
+                    productosFiltrados.push({CODIGO: productCodigo, NOMBRE: productNombre, DESCRIPCION: productDescripcion, STOCK: productStock});
+                }
+            });
+            console.log(productosFiltrados);
+        },
+        
+        error: function (error) {
+                console.log(error);
+        }
+    });
+}
+
+/*FUNCION PARA TRAER TUS PRODUCTOS DE LA API FIN*/
+/*FUNCION PARA QUE GENERE LA TABLA CON TUS PRODUCTOS DE LA FUNCION traerProductosApi();*/
+function generarFilasTabla() {
+
+
+  //TODA ESTA FUNCION PARA ABAJO LO UNICO QUE HACE ES IRTE TRAYENDO TUS PRODUCTOS DEL ARREGLO "productosFiltrados[]"
+  //OJITO QUE PARA QUE ESTA WEA FUNCIONE TIENE QUE APRETAR DOS VECES EL BOTON
+  // POR QUE LA FUNCION QUE ESTOY LLAMANDO ARRIBA "traerProductosApi();" SE DEMORA EN TRAER LOS PRODUCTOS
+  var tabla = document.getElementById('datatable');
+  var filasHTML = '';
+  
+  for (var i = 0; i < productosFiltrados.length; i++) {
+    var producto = productosFiltrados[i];
+    
+    filasHTML += '<tr>' +
+      '<td>' + producto.CODIGO + '</td>' +
+      '<td>' + producto.NOMBRE + '</td>' +
+      '<td>' + producto.DESCRIPCION + '</td>' +
+      '<td>' + producto.PRECIO + '</td>' +
+      '<td>' + producto.STOCK + '</td>' +
+      '</tr>';
+  }
+  
+  tabla.innerHTML = filasHTML;
+}
+
+window.addEventListener('load', function() {
+  // Aquí colocas el código de la primera función a ejecutar
+  traerProductosApi();
+
+  // Aquí colocas el código de la segunda función a ejecutar
+  generarCardsModal()
+});

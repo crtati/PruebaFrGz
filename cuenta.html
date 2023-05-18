@@ -93,9 +93,8 @@
                     >
                   </li>-->
                   <li class="nav-item mx-3 mt-2">
-                    <a class="nav-link" aria-current="page" href="maceta.html"
-                      >Maceteros</a
-                    >
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mdl_maceteros" onclick="generarCardsModal()">
+                      Maceteros</a>
                   </li>
                   <!--<li class="nav-item mx-3 mt-2">
                     <a
@@ -198,7 +197,7 @@
                     class="btn btn-car"
                     name="butn"
                     id="butnlog"
-                    onclick="login()"  
+                    onclick="validarLogin()"  
                     
                   >
                   <a class="nav-link1" aria-current="page" href="index.html"></a>
@@ -685,7 +684,23 @@
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossorigin="anonymous"
         ></script>
-        <script src="js/funciones.js"></script>
+          <!--MODAL MACETEROS -->
+          <div class="modal fade" id="mdl_maceteros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h1 class="modal-title fs-3 px-2 col align-self-start text-center">
+                    M A C E T E R O S
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                  <!-- Aquí se agregará el contenido de las cards -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <script src="js/funciones.js"></script>
       </body>
     </html>
   </body>

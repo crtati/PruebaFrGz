@@ -57,7 +57,7 @@
 
             <li class="nav-item mx-3 mt-2">
               <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mdl_maceteros"
-                onclick="listarProductosPRUEBA()">
+                onclick="generarCardsModal()">
                 Maceteros</a>
             </li>
 
@@ -102,6 +102,22 @@
     </nav>
   </header>
 
-  
+  <!--MODAL MACETEROS -->
+  <div class="modal fade" id="mdl_maceteros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h1 class="modal-title fs-3 px-2 col align-self-start text-center">
+            M A C E T E R O S
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Aquí se agregará el contenido de las cards -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/funciones.js"></script>
   </body>
   </html>

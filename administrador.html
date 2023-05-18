@@ -28,7 +28,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css" />
-  <script src="js/funciones.js"></script>
 
   <title>Prueba1</title>
 </head>
@@ -119,14 +118,14 @@
             <label for="stockprd" class="form__label"> Stock</label>
             <span class="form__line"></span>
           </div>
-          <button type="submit" onclick="almacenarProducto()">Enviar mensaje</button>
+          <button type="button" onclick="validarAlmacenarProducto()">Enviar producto</button>
           
         </div>
       </form>
 
       <div class="formulario" id="div_productos" >
         <button type="button" id="buttonCompraAlmacenar" onclick="agregarProducto()" class="btn btn-primary boton">comprar</button>        
-        <button type="button" onclick="listarProductosPRUEBA()" class="btn btn-primary boton">Listar Productos</button>
+        <button type="button" onclick="generarFilasTabla()" class="btn btn-primary boton">Listar Productos</button>
     </div>
       <!--<form class="form-producto" id="form-producto" method="post">
     
@@ -176,28 +175,10 @@
         </table>
       </div>
       
-      <script>
-        let url = 'https://www.fer-sepulveda.cl/API_PLANTAS/api-service.php?nombreFuncion=ProductoListar'
-        fetch(url)
-          .then(response => response.json())
-          .then(datatable => mostrarData(datatable))
-          .catch (error => console.log(error))
-          
-          const mostrarData=(data)=>{
-            console.log(data)
-            
-            
-            let body =clearInterval();
-            
-              data.result.forEach((data) => {
-                if(data.STOCK!=0){
-                  body+=`<tr><td>${data.CODIGO}</td><td>${data.DESCRIPCION}</td><td>${data.NOMBRE}</td><td>${data.PRECIO}</td><td>${data.STOCK}</td></tr>`
-                  document.getElementById('datatable').innerHTML = body
-          }});
-          }
-            
-          
-      </script>
+  
+  
+      <script src="js/funciones.js"></script>
+
 </body>
 
 </html>
